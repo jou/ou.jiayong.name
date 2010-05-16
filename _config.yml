@@ -1,0 +1,10 @@
+markdown: rdiscount
+pygments: true
+pygments_cache: .pygments-cache
+permalink: /blog/:title.html
+haml: true
+haml_options:
+  ugly: true
+sass: true
+post_defaults:
+  layout: post

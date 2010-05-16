@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+#post
+  %h1= page.title
+  %ul.meta
+    %li.date Written on #{format_date(page.date)}
+  .content= content
+  .nav
+    - if page.previous
+      %a.previous{ :href => page.previous.url }= "«« #{page.previous.title}"
+    - if page.next
+      %a.next{ :href => page.next.url }= "#{page.next.title} »»"
+

@@ -1,0 +1,11 @@
+---
+layout: default
+---
+
+#home
+  %h1 Posts:
+  %ul.posts
+    - site.posts.reverse.each do |post|
+      %li
+        %span.date= format_date(post.date) + ':'
+        %a{ :href => post.url }= post.title

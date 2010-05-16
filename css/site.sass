@@ -1,0 +1,108 @@
+$background: #fff
+$text-color: #333
+$link-color: #7a8e85
+$hover-color: $link-color
+$visited-color: #7d7a75
+$title-color: #6d4357
+$date-color: #999
+
+$pre-background: #f8f8f8
+
+@mixin reset
+  margin: 0
+  padding: 0
+
+body, h1, h2, h3, h4, div, p
+  @include reset
+
+body
+  font: 1.4em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif
+  background-color: $background
+  color: $text-color
+
+a 
+  text-decoration: none
+  color: $link-color
+  &:hover 
+    text-decoration: underline
+  &:visited 
+    color: $visited-color
+
+code, pre
+  background-color: $pre-background
+
+code, .highlight pre
+  font: 0.75em Menlo, Consolas, monospace
+
+pre
+  overflow: auto
+  
+li
+  list-style: circle
+
+#teh_stuff
+  padding: 0.5em
+  margin: auto
+  max-width: 30em
+
+p
+  margin-bottom: 1em
+
+h1
+  font-size: 1.5em
+
+.header h1
+  font-size: 2em
+  margin-bottom: 0.5em
+  color: $title-color
+  a
+    color: $title-color
+
+.intro
+  margin-bottom: 2em
+  border-bottom: 1px dotted #aaa
+
+#home h1
+  margin-bottom: 0.75em
+  
+#home ul.posts
+  @include reset
+  list-style: none
+  color: $date-color
+  li
+    margin-bottom: 0.5em
+    .date
+      display: block
+      float: left
+      width: 14em
+    a
+      display: block
+      border-left: 14em solid transparent
+      clear: right
+
+#post
+  h1
+    margin-bottom: 0.25em
+  ul.meta
+    margin-bottom: 1.5em
+    list-style: none
+    .date
+      color: $date-color
+
+#post .nav
+  a
+    margin-bottom: 1em
+    display: block
+  .previous
+    float: left
+  .next
+    float: right
+
+#page
+  h1
+    margin-bottom: 0.75em
+        
+.footer
+  clear: both
+  margin-top: 4em
+  border-top: 1px dotted #aaa
