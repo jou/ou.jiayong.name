@@ -13,8 +13,11 @@
 
     %link{ :type => 'text/css', :rel => 'stylesheet', :href => 'http://fonts.googleapis.com/css?family=Inconsolata|Cantarell' }
 
-    %link{ :type => 'text/css', :rel => 'stylesheet', :href => '/css/site.css' }
-    %link{ :type => 'text/css', :rel => 'stylesheet', :href => '/css/highlight.css' }
+    - if site.environment == 'development'
+      %link{ :type => 'text/css', :rel => 'stylesheet', :href => '/css/site.css' }
+      %link{ :type => 'text/css', :rel => 'stylesheet', :href => '/css/highlight.css' }
+    - else
+      %link{ :type => 'text/css', :rel => 'stylesheet', :href => '/css/combined.css' }
 
   %body
     #teh_stuff
