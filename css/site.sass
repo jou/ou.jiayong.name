@@ -66,19 +66,20 @@ h1
   margin-bottom: 0.75em
   
 #home ul.posts
+  $date-width: 12.5em
   @include reset
-  list-style: none
   color: $date-color
   li
+    position: relative
+    list-style: none
     margin-bottom: 0.5em
+    border-left: $date-width solid transparent
     .date
+      position: absolute
+      top: 0
+      left: -$date-width
       display: block
-      float: left
-      width: 14em
-    a
-      display: block
-      border-left: 14em solid transparent
-      clear: right
+      width: $date-width
 
 #post
   h1
