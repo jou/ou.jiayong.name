@@ -1,5 +1,5 @@
 module Helpers
   def format_date date
-    date.strftime('%A, %d %B %Y')
+    date.strftime('%a, %d %B %Y')
   end
 end
