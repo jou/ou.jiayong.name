@@ -1,0 +1,20 @@
+---
+title: Categories
+layout: default
+---
+- sorted_categories = sort_categories(site.categories)
+#categories
+  %h1= page.title
+  %ul.list
+    - sorted_categories.each do |tuple|
+      - category = tuple[0]
+      %li
+        %a{ :href => category_url(category) }= category
+  - sorted_categories.each do |tuple|
+    - category, posts = *tuple
+    %h2{ :id => urlencode(category) }= category
+    %ul.posts
+      - posts.reverse.each do |post|
+        %li
+          %span.date= format_date(post.date) + ':'
+          %a{ :href => post.url }= post.title

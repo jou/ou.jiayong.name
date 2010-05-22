@@ -51,6 +51,12 @@ p
 h1
   font-size: 1.5em
 
+h2
+  font-size: 1.3em
+
+h3
+  font-size: 1.1em
+
 .header h1
   font-size: 2em
   margin-bottom: 0.5em
@@ -62,24 +68,42 @@ h1
   margin-bottom: 2em
   border-bottom: 1px dotted #aaa
 
-#home h1
-  margin-bottom: 0.75em
-  
-#home ul.posts
-  $date-width: 12.5em
-  @include reset
-  color: $date-color
-  li
-    position: relative
-    list-style: none
-    margin-bottom: 0.5em
-    border-left: $date-width solid transparent
-    .date
-      position: absolute
-      top: 0
-      left: -$date-width
-      display: block
-      width: $date-width
+#home, #categories
+  h1, h2
+    margin-bottom: 0.75em
+  .posts
+    $date-width: 12.5em
+    @include reset
+    margin-bottom: 1.5em
+    color: $date-color
+    li
+      position: relative
+      list-style: none
+      margin-bottom: 0.5em
+      border-left: $date-width solid transparent
+      .date
+        position: absolute
+        top: 0
+        left: -$date-width
+        display: block
+        width: $date-width
+
+  .list
+    @include reset
+    margin-bottom: 1.5em
+    display: inline
+    li
+      display: inline
+      &:after
+        content: "|"
+      &:last-child:after
+        content: ""
+
+#home h1.categories
+  font-size: 1em
+  display: inline
+  &:after
+    content: ": "
 
 #post
   h1
