@@ -10,7 +10,7 @@ layout: default
         %span.date= format_date(post.date) + ':'
         %a{ :href => post.url }= post.title
   %h1.categories Categories
-  %ul.list
+  %ul.category-list
     - sorted_categories.each do |tuple|
       - category = tuple[0]
       %li

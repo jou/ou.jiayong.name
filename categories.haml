@@ -5,7 +5,7 @@ layout: default
 - sorted_categories = sort_categories(site.categories)
 #categories
   %h1= page.title
-  %ul.list
+  %ul.category-list
     - sorted_categories.each do |tuple|
       - category = tuple[0]
       %li

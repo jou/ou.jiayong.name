@@ -1,11 +1,18 @@
 ---
 layout: default
 ---
-
+- sorted_categories = sort_categories(page.categories)
 #post
   %h1= page.title
   %ul.meta
     %li.date Written on #{format_date(page.date)}
+    %li.categories
+      %span Filed under
+      %ul.category-list
+        - sorted_categories.each do |category|
+          %li
+            %a{ :href => category_url(category) }= category
+
   .content= content
   .nav
     - if page.previous
