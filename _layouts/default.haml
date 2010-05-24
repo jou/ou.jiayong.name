@@ -11,6 +11,8 @@
       = "#{h(page.title)} -" if page.respond_to?(:title) && page.title
       Jiayong Ou
 
+    %link{ :rel => 'alternate', :type => 'application/atom+xml', :title => 'ou.jiayong.name Feed', :href => '/atom.xml' }
+
     %link{ :type => 'text/css', :rel => 'stylesheet', :href => 'http://fonts.googleapis.com/css?family=Inconsolata|Cantarell' }
 
     - if site.environment == 'development'
