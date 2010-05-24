@@ -88,26 +88,24 @@ h3
         display: block
         width: $date-width
 
-#home, #categories, #post
-  .category-list
-    @include reset
-    margin-bottom: 1.5em
-    display: inline
-    li
-      @include reset
-      display: inline
-      a
-        @include reset
-      &:after
-        content: "|"
-      &:last-child:after
-        content: ""
-
 #home h1.categories
   font-size: 1em
   display: inline
   &:after
     content: ": "
+
+.category-list
+  @include reset
+  margin-bottom: 1em
+  li
+    @include reset
+    display: inline
+    a
+      @include reset
+    &:after
+      content: "|"
+    &:last-child:after
+      content: ""
 
 #post
   h1
@@ -118,10 +116,12 @@ h3
     color: $date-color
     li
       list-style: none
-    .category-list li:after
-      content: ", "
-    .category-list li:last-child:after
-      content: ""
+    .category-list
+      display: inline
+      li:after
+        content: ", "
+      li:last-child:after
+        content: ""
 
 
 #post .nav
