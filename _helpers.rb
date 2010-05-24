@@ -1,6 +1,7 @@
 require 'cgi'
 
 module Helpers
+  include Jekyll::Filters
   def format_date date
     date.strftime('%a, %d %B %Y')
   end

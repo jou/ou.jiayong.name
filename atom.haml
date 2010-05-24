@@ -1,0 +1,22 @@
+---
+permalink: /atom.xml
+layout: nil
+---
+!!! XML
+%feed{ :xmlns => 'http://www.w3.org/2005/Atom'}
+  %title ou.jiayong.name
+  %link{ :href => 'http://ou.jiayong.name/atom.xml', :rel => 'self' }
+  %link{ :href => 'http://ou.jiayong.name/' }
+  %updated= date_to_xmlschema(Time.now)
+  %id http://ou.jiayong.name/
+  %author
+    %name Jiayong Ou
+    %email jou@orly.ch
+  
+  - site.posts.first(10).each do |post|
+    %entry
+      %title= post.title
+      %link{ :href => "http://ou.jiayong.name#{post.url}"}
+      %updated= date_to_xmlschema(post.date)
+      %id= "http://ou.jiayong.name#{post.id}"
+      %content{ :type => "html" }= xml_escape(post.content)
