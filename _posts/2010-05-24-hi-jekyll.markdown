@@ -1,0 +1,20 @@
+---
+title: Hi Jekyll!
+categories: [Ruby, Meta]
+---
+
+Finally arrived on the [jekyll][] bandwagon got around re-launching <http://ou.jiayong.name> with it. I've got to say it's been very nice to work with. In case you don't know what jekyll is: It's a Ruby gem that generates static pages from a bunch of files containing its layouts, contents and assets. Everything you see here are static pages.
+
+ [jekyll]: http://github.com/mojombo/jekyll
+ 
+This blog is intended to supplement my [tumblr blog][orly.ch] with a low noise, original content one. It focuses on software development, although I might put an off-topic post here every now and then. For the beginning, I've dragged some of my older posts with useful infos in it over.
+
+ [orly.ch]: http://orly.ch/
+
+[My own fork of jekyll][jou-jekyll] is based off [Henrik Nyh][nyh]'s [fork with Haml support][henrik-jekyll]. The source files of this blog is also [on github][jou-ou.jiayong.name]. The contents here are under a [Creative Commons by-nc][cc-by-nc] license.
+
+ [jou-jekyll]: http://github.com/jou/jekyll
+ [nyh]: http://henrik.nyh.se/
+ [henrik-jekyll]: http://github.com/henrik/jekyll
+ [jou-ou.jiayong.name]: http://github.com/jou/ou.jiayong.name
+ [cc-by-nc]: http://creativecommons.org/licenses/by-nc/2.5/ch/
