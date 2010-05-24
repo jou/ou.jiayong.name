@@ -8,9 +8,9 @@ layout: default
     %li.date Written on #{format_date(page.date)}
     %li.categories
       %span Filed under
-      %ul.category-list
+      %ul.category-list<
         - sorted_categories.each do |category|
-          %li
+          %li><
             %a{ :href => category_url(category) }= category
 
   .content= content
