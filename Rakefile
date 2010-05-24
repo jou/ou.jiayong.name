@@ -1,6 +1,7 @@
 task :default => [:build]
 
 ENVIRONMENT = ENV['ENV'] || nil
+DEPLOY_TARGET = 'orly.ch:/var/www/jia/jiayong.name/jekyll'
 
 namespace :site do
   desc "delete _site"
@@ -55,7 +56,8 @@ namespace :site do
     desc 'create pre-gzipped files'
     task :gzip do
       puts "gzip HTML, JS and CSS"
-      Dir['_site/**/*.html', '_site/**/*.css', '_site/**/*.js'].each do |filename|
+      gzip_globs = %w(_site/**/*.html _site/*.xml _site/**/*.js _site/**/*.css)
+      Dir[*gzip_globs].each do |filename|
         system 'pigz', '-0kf', filename
         system 'advdef', '-zq4', "#{filename}.gz"
       end
@@ -71,5 +73,7 @@ task :build => [:"site:build", :"site:assets:all"]
 
 desc "build and deploy site"
 task :deploy => :build do
-  #todo
+  puts "rsync stuff to #{DEPLOY_TARGET}"
+  Dir.chdir '_site'
+  system 'rsync', '-avz', '--delete', '.', DEPLOY_TARGET
 end
