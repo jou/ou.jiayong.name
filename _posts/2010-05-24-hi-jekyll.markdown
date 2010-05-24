@@ -3,7 +3,7 @@ title: Hi Jekyll!
 categories: [Ruby, Meta]
 ---
 
-Finally arrived on the [jekyll][] bandwagon got around re-launching <http://ou.jiayong.name> with it. I've got to say it's been very nice to work with. In case you don't know what jekyll is: It's a Ruby gem that generates static pages from a bunch of files containing its layouts, contents and assets. Everything you see here are static pages.
+Finally arrived on the [jekyll][] bandwagon and got around re-launching <http://ou.jiayong.name> with it. I've got to say it's been very nice to work with. In case you don't know jekyll: It's a Ruby gem that generates static pages from a bunch of files containing its layouts, contents and assets. Everything you see here are static pages.
 
  [jekyll]: http://github.com/mojombo/jekyll
  
