@@ -5,6 +5,7 @@ permalink: /blog/:title.html
 haml: true
 haml_options:
   ugly: true
+  format: :html5
 sass: true
 post_defaults:
   layout: post
