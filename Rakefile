@@ -35,9 +35,9 @@ namespace :site do
     desc "create combined CSS"
     task :combine => '_site/css/combined.css'
 
-    require 'yui/compressor'
     desc 'create minified JS and CSS with YUI compressor'
     task :minify do
+      require 'yui/compressor'
       puts 'minify JS and CSS with YUI Compressor'
       js_compressor = YUI::JavaScriptCompressor.new
       css_compressor = YUI::CssCompressor.new
@@ -58,8 +58,9 @@ namespace :site do
       puts "gzip HTML, JS and CSS"
       gzip_globs = %w(_site/**/*.html _site/*.xml _site/**/*.js _site/**/*.css)
       Dir[*gzip_globs].each do |filename|
-        system 'pigz', '-0kf', filename
+        system 'pigz', '-0nkf', filename
         system 'advdef', '-zq4', "#{filename}.gz"
+        File.utime File.atime(filename), File.mtime(filename), "#{filename}.gz"
       end
     end
 
