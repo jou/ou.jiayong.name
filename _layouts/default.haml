@@ -3,10 +3,18 @@
 %html
   %head
     %meta{ 'http-equiv' => 'Content-type', :content => 'text/html;charset=UTF-8' }
+
     %meta{ :name => 'geo.placename', :content => 'Kreuzlingen, Switzerland' }
     %meta{ :name => 'geo.position', :content => '47.65;9.18' }
     %meta{ :name => 'geo.region', :content => 'CH-Thurgau' }
     %meta{ :name => 'ICBM', :content => '47.65, 9.18' }
+
+    %meta{ :'http-equiv' => 'X-XRDS-Location', :content => 'http://www.myopenid.com/xrds?username=jou.myopenid.com' }
+    %link{ :rel => 'openid.server' , :href => 'http://www.myopenid.com/server' }
+    %link{ :rel => 'openid.delegate' , :href => 'http://jou.myopenid.com/' }
+    %link{ :rel => 'openid2.local_id' , :href => 'http://jou.myopenid.com' }
+    %link{ :rel => 'openid2.provider' , :href => 'http://www.myopenid.com/server' }
+
     %title 
       = "#{h(page.title)} -" if page.respond_to?(:title) && page.title
       Jiayong Ou
