@@ -17,4 +17,12 @@ module Helpers
   def category_url category
     "/categories.html##{urlencode(category)}"
   end
+
+  def mtime file
+    File.mtime file
+  end
+
+  def latest_mtime files
+    files.map{|file| mtime file}.sort.last
+  end
 end

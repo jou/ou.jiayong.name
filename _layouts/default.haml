@@ -24,10 +24,11 @@
     %link{ :type => 'text/css', :rel => 'stylesheet', :href => 'http://fonts.googleapis.com/css?family=Inconsolata|Cantarell' }
 
     - if site.environment == 'development'
-      %link{ :type => "text/css", :rel => "stylesheet", :href => "/css/site.css?#{Time.now.to_i}" }
-      %link{ :type => "text/css", :rel => "stylesheet", :href => "/css/highlight.css?#{Time.now.to_i}" }
+      %link{ :type => "text/css", :rel => "stylesheet", :href => "/css/site.css?#{mtime('css/site.sass').to_i}" }
+      %link{ :type => "text/css", :rel => "stylesheet", :href => "/css/highlight.css?#{mtime('css/highlight.css').to_i}" }
     - else
-      %link{ :type => "text/css", :rel => "stylesheet", :href => "/css/combined.css?#{Time.now.to_i}" }
+      - stylesheets = ['css/site.sass', 'css/highlight.css']
+      %link{ :type => "text/css", :rel => "stylesheet", :href => "/css/combined.css?#{latest_mtime(stylesheets).to_i}" }
 
   %body
     #teh_stuff
