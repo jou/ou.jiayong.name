@@ -28,17 +28,25 @@ module Helpers
     files.map{|file| mtime file}.sort.last
   end
 
+  def relative_path file
+    working_dir = Pathname.new('.').realpath
+    file_path = Pathname.new(file).realpath
+
+    file_path.relative_path_from(working_dir).to_s
+  end
+
   def last_commit file
     @repo ||= Grit::Repo.new '.'
     @file_index ||= Grit::Git::FileIndex.new '.git'
 
-    working_dir = Pathname.new('.').realpath
-    file_path = Pathname.new(file).realpath
-    relative_path = file_path.relative_path_from(working_dir)
 
-    commits = @file_index.commits_for relative_path.to_s
+    commits = @file_index.commits_for relative_path(file)
     return mtime file if !commits
 
     @repo.commit(commits.first).date
+  end
+
+  def latest_commit_among files
+    files.map{|file| last_commit file}.sort.last
   end
 end
