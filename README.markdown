@@ -1,9 +1,23 @@
 # Huh?
 
-This repository contains my blog, [ou.jiayong.name][]. All content are licensed under [Creative Commons by-nc][cc-by-nc], all code are the licensed under the license below
+This repository contains my blog, [ou.jiayong.name][]. All content are licensed under [Creative Commons by-nc][cc-by-nc], all code are the licensed under the license below. Feel free to use this as a starting point for your own blog.
 
  [ou.jiayong.name]: http://ou.jiayong.name/
  [cc-by-nc]: http://creativecommons.org/licenses/by-nc/2.5/ch/
+
+It makes use of some hacks in [my own branch of jekyll][jou-jekyll], so it will probably only be generated correctly with it.
+
+ [jou-jekyll]: http://github.com/jou/jekyll
+
+# Dependencies
+
+In addition to [jekyll][jou-jekyll], it needs:
+
+ *  [Rake][] to build and deploy using the Rakefile
+ *  [grit][] to find out when posts are last commited
+
+[Rake]: http://rake.rubyforge.org/
+[grit]: http://github.com/mojombo/grit
 
 # Code License
 
