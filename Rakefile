@@ -3,6 +3,14 @@ task :default => [:build]
 ENVIRONMENT = ENV['ENV'] || nil
 DEPLOY_TARGET = 'orly.ch:/var/www/jia/jiayong.name/jekyll'
 
+namespace :grit do
+  desc "create index file for grit"
+  task :file_index do
+    puts "Create .git/file-index"
+    system 'git log --pretty=oneline --name-only --parents --reverse --all > .git/file-index'
+  end
+end
+
 namespace :site do
   desc "delete _site"
   task :delete do
@@ -70,7 +78,7 @@ namespace :site do
 end
 
 desc "build site and assets"
-task :build => [:"site:build", :"site:assets:all"]
+task :build => [:"grit:file_index", :"site:build", :"site:assets:all"]
 
 desc "build and deploy site"
 task :deploy => :build do

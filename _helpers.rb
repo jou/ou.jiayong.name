@@ -1,4 +1,6 @@
 require 'cgi'
+require 'grit'
+require 'pathname'
 
 module Helpers
   include Jekyll::Filters
@@ -24,5 +26,19 @@ module Helpers
 
   def latest_mtime files
     files.map{|file| mtime file}.sort.last
+  end
+
+  def last_commit file
+    @repo ||= Grit::Repo.new '.'
+    @file_index ||= Grit::Git::FileIndex.new '.git'
+
+    working_dir = Pathname.new('.').realpath
+    file_path = Pathname.new(file).realpath
+    relative_path = file_path.relative_path_from(working_dir)
+
+    commits = @file_index.commits_for relative_path.to_s
+    return mtime file if !commits
+
+    @repo.commit(commits.first).date
   end
 end

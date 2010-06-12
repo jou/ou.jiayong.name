@@ -13,12 +13,13 @@ haml_options:
   %id http://ou.jiayong.name/
   %author
     %name Jiayong Ou
-    %email jou@orly.ch
+    %uri http://ou.jiayong.name/pages/contact.html
   
   - site.posts.first(10).each do |post|
     %entry
       %title= post.title
       %link{ :href => "http://ou.jiayong.name#{post.url}"}
-      %updated= date_to_xmlschema(post.date)
+      %updated= date_to_xmlschema(last_commit post.path)
+      %published= date_to_xmlschema(post.date)
       %id= "http://ou.jiayong.name#{post.id}"
       %content{ :type => "html" }= xml_escape(post.content)
