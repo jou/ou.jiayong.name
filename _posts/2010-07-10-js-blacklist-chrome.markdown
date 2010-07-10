@@ -20,7 +20,7 @@ Due to limitations in Chrome's extension API, it needs to wait for a [message][c
 
 You can install it from [Chrome extensions gallery][gallery-link]. If you're interested in the source code, it's [on github][jou-chrome-blacklist]. Patches are welcome.
 
- [gallery-link]: https://chrome.google.com/extensions/detail/gofhjkjmkpinhpoiabjplobcaignabnl
+ [gallery-link]: https://chrome.google.com/extensions/detail/emcepjkdiiaenmoaghcfghjjppbkbhnf
  [jou-chrome-blacklist]: http://github.com/jou/chrome-jsblacklist
 
 I'm running `dev`-channel on Mac, but I tested it with the current stable version and it seems to work. I haven't tested it on Linux or Windows, but it should work.
