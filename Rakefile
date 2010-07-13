@@ -64,7 +64,11 @@ namespace :site do
     desc 'create pre-gzipped files'
     task :gzip do
       puts "gzip HTML, JS and CSS"
-      gzip_globs = %w(_site/**/*.html _site/*.xml _site/**/*.js _site/**/*.css)
+      gzip_globs = %w(
+        _site/**/*.html _site/*.xml 
+        _site/**/*.js _site/**/*.css
+        _site/favicon.ico
+      )
       Dir[*gzip_globs].each do |filename|
         system 'pigz', '-0nkf', filename
         system 'advdef', '-zq4', "#{filename}.gz"

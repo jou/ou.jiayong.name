@@ -12,7 +12,7 @@ layout: page
 *	**[Slightly Less Simple Standards-Based Slide Show System][s5]** (Ruby)  
 	Create a [S5](http://meyerweb.com/eric/tools/s5/) slide show with Markdown and Rake.
 
-And more [on github][gh].
+And some more stuff [on github][gh].
 
  [jq-tap]: http://github.com/jou/jquery.tap.js
  [YAURLS]: http://github.com/jou/yaurls
