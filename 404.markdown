@@ -1,0 +1,7 @@
+---
+title: URL not found
+layout: page
+---
+The specified page could not be found. 
+
+If you got here from elsewhere (e.g. Google), the URLs has been recently changed, so look at the [front page](/) and see if you find what you were looking for. If you really miss something, please [drop me a line](/pages/contact.html).
